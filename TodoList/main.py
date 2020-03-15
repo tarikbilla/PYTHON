@@ -1,16 +1,15 @@
 # import tkinter and all its functions
 from tkinter import *
 import tkinter as tk
-import random
 
 root = Tk() # create root window
 root.title("Basic GUI Layout") # title of the GUI window
 root.maxsize(900, 600) # specify the max size the window can expand to
-root.config(bg="blue") # specify background color
+root.config(bg="#fff") # specify background color
 
 
 
-# ===============Creating Menubar =============================
+# Creating Menubar
 menubar = Menu(root) 
 # Adding File Menu and commands 
 file = Menu(menubar, tearoff = 0) 
@@ -43,23 +42,35 @@ help_.add_command(label ='About Tk', command = None)
 # display Menu 
 root.config(menu = menubar) 
 
-#================= End Menu==============================
+#End Menu
 
 
 
 
-# =============== Create left and right frames ================
-left_frame = Frame(root, width=200, height=500, bg='grey')
-left_frame.grid(row=1, column=0, padx=10, pady=5)
+#Create left and right frames
+left_frame = Frame(root, width=200, height=500, bg='#d7d7d7')
+left_frame.grid(row=1, column=0, padx=5, pady=2)
 
-right_frame = Frame(root, width=650, height=500, bg='grey')
-right_frame.grid(row=1, column=1, padx=10, pady=5)
+left_head = Frame(left_frame, width=180, height=38, bg='#ffffff')
+left_head.grid(row=0, column=0, padx=5, pady=2)
 
-right_head = Frame(right_frame, width=600, height=40, bg='green')
-right_head.grid(row=0, column=0, padx=10, pady=5)
+left_content = Frame(left_frame, width=180, height=418, bg='#ffffff')
+left_content.grid(row=1, column=0, padx=5, pady=2)
 
-right_content = Frame(right_frame, width=600, height=460, bg='grey')
-right_content.grid(row=1, column=0, padx=10, pady=5)
+left_footer = Frame(left_frame, width=180, height=38, bg='#ffffff')
+left_footer.grid(row=2, column=0, padx=5, pady=2)
+
+
+
+#Right Side
+right_frame = Frame(root, width=650, height=500, bg='#d7d7d7')
+right_frame.grid(row=1, column=1, padx=5, pady=2)
+
+right_head = Frame(right_frame, width=600, height=38, bg='#ffffff')
+right_head.grid(row=0, column=0, padx=5, pady=2)
+
+right_content = Frame(right_frame, width=600, height=458, bg='#ffffff')
+right_content.grid(row=1, column=0, padx=5, pady=2)
 
 
 
